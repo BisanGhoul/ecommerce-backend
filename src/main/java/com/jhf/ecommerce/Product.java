@@ -1,5 +1,7 @@
 package com.jhf.ecommerce;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -29,14 +31,14 @@ public class Product {
     @Column(name = "is_active")
     private Boolean isActive;
 
-    @OneToMany(mappedBy = "product")
-    private Set<ProductCategory> productCategories = new LinkedHashSet<>();
+        @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+        private Set<ProductCategory> productCategories = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "product")
-    private Set<Producttag> producttags = new LinkedHashSet<>();
+        @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+        private Set<Producttag> producttags = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "product")
-    private Set<Productvariant> productvariants = new LinkedHashSet<>();
+        @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
+        private Set<Productvariant> productvariants = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;
