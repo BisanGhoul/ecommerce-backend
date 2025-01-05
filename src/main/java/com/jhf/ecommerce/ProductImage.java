@@ -1,5 +1,6 @@
 package com.jhf.ecommerce;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
@@ -30,9 +31,10 @@ public class ProductImage {
     @Column(name = "file_path", nullable = false)
     private String filePath;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "product_id")
+    @JsonIgnore
     private Productvariant product;
 
     public Integer getId() {

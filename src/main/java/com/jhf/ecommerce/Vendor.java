@@ -45,7 +45,7 @@ public class Vendor {
     @Column(name = "website")
     private String website;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "address_id")
     private address address;

@@ -69,7 +69,7 @@ public class Customer {
     @JoinColumn(name = "wishlist_id")
     private Wishlist wishlist;
 
-    @OneToMany(mappedBy = "customer")
+    @OneToMany(mappedBy = "customer",fetch = FetchType.EAGER)
     private Set<Order> orders = new LinkedHashSet<>();
 
     public Integer getId() {

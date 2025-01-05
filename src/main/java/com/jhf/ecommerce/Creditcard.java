@@ -35,12 +35,12 @@ public class Creditcard {
     @Column(name = "cvv", nullable = false, length = 3)
     private String cvv;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "payment_id")
     private Payment payment;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "billing_address_id")
     private address billingAddress;

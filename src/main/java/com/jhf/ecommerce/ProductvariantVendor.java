@@ -9,12 +9,12 @@ public class ProductvariantVendor {
     private ProductvariantVendorId id;
 
     @MapsId("productvariantsId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "productvariants_id", nullable = false)
     private Productvariant productvariants;
 
     @MapsId("vendorsId")
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @JoinColumn(name = "vendors_id", nullable = false)
     private Vendor vendors;
 

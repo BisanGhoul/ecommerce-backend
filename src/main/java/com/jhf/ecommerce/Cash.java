@@ -14,7 +14,7 @@ public class Cash {
     @Column(name = "cid", nullable = false)
     private Integer id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "payment_id")
     private Payment payment;
@@ -28,7 +28,7 @@ public class Cash {
     @Column(name = "currency", length = 10)
     private String currency;
 
-    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "billing_address_id")
     private address billingAddress;

@@ -30,7 +30,7 @@ public class Productvariant {
     private BigDecimal price;
 
     @NotNull
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @ManyToOne(fetch = FetchType.EAGER, optional = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
     @JoinColumn(name = "product_id", nullable = false)
     @JsonIgnore
@@ -51,7 +51,7 @@ public class Productvariant {
     @ManyToMany
     private Set<Vendor> vendors = new LinkedHashSet<>();
 
-    @OneToMany(mappedBy = "product", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     private Set<ProductImage> productImages = new LinkedHashSet<>();
 
     // Getters and setters

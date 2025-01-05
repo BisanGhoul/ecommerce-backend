@@ -1,5 +1,6 @@
 package com.jhf.ecommerce;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import jakarta.validation.constraints.Size;
 
@@ -19,6 +20,7 @@ public class Wishlist {
     private String name;
 
     @OneToOne(mappedBy = "wishlist")
+    @JsonIgnore
     private Customer customers;
 
     @OneToMany(mappedBy = "wishlist")

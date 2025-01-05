@@ -1,5 +1,6 @@
 package com.jhf.ecommerce;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 
 import java.util.LinkedHashSet;
@@ -17,6 +18,7 @@ public class Cart {
     private Set<Cartproductvariant> cartproductvariants = new LinkedHashSet<>();
 
     @OneToOne(mappedBy = "cart")
+    @JsonIgnore
     private Customer customers;
 
     public Integer getId() {
