@@ -1,6 +1,6 @@
 package com.jhf.ecommerce.products;
 
-import com.jhf.ecommerce.Product;
+import com.jhf.ecommerce.model.Product;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
