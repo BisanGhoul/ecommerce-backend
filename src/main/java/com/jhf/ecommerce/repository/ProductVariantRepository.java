@@ -1,4 +1,4 @@
-package com.jhf.ecommerce.products;
+package com.jhf.ecommerce.repository;
 
 import com.jhf.ecommerce.model.Productvariant;
 import org.springframework.data.jpa.repository.JpaRepository;
